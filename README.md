@@ -16,6 +16,7 @@ Desafio feito em Cobol.
 ## <img src="https://user-images.githubusercontent.com/42828915/149689042-3cfb681c-3968-4f1c-9da5-b254adc4d9f8.png" width="375px">
 
 ##### Após isso crie uma pasta no caminho "C:\Program Files (x86)\OpenCobolIDE\GnuCOBOL\bin" com o nome "Pub"
-##### Para finalizar crie uma pasta na area de trabalho e dentro arraste o arquivo "GerFinanceiroP_001.cbl".
+##### Crie uma pasta na area de trabalho e dentro arraste o arquivo "GerFinanceiroP_001.cbl".
+##### Para finalizar certifique-se que nas configurações da IDE esteja habilitada a função de execução em terminal externo que encontra-se na aba "RUN"
 ##### Finalizadas as configurações basta abrir o arquivo "GerFinanceiroP_001.cbl" na IDE compilar e executar.
 
