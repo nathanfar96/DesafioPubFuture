@@ -131,7 +131,7 @@
        01 WS-LIMPA-TELA    PIC A(02) VALUE 'NO'.
        01 WS-CONTATIPO-OK  PIC A(02) VALUE 'NO'.
 
-       01 WS-CONTADOR  PIC 9(02) VALUE ZERO.
+       01 WS-CONTADOR          PIC 9(02) VALUE ZERO.
        01 WS-FSTATUS           PIC 9(02) VALUE ZEROS.
        01 WS-STATUSOP          PIC X(35) VALUE SPACE.
        01 WS-EOF               PIC 9     VALUE ZERO.
@@ -151,7 +151,7 @@
            03 TB-REC-ID            PIC X(04) VALUE ZEROS.
            03 FILLER               PIC X(01) VALUE ';'.
            03 TB-REC-VALOR         PIC 9(06).
-           03 FILLER               PIC X(01)   VALUE ';'.
+           03 FILLER               PIC X(01) VALUE ';'.
            03 TB-DATA-RECEB.
                07 TB-DIA-RECEB     PIC 9(02).
                07 TB-MES-RECEB     PIC 9(02).
@@ -160,7 +160,7 @@
                07 TB-DIA-RECEB-ESP PIC 9(02).
                07 TB-MES-RECEB-ESP PIC 9(02).
                07 TB-ANO-RECEB-ESP PIC 9(04).
-           03 FILLER       PIC X(01)   VALUE ';'.
+           03 FILLER       PIC X(01) VALUE ';'.
            03 TB-REC-DESC  PIC X(15).
            03 FILLER       PIC X(01) VALUE ';'.
            03 TB-REC-CONTA PIC X(15).
@@ -186,6 +186,7 @@
                BACKGROUND-COLOR IS 01.
            03  LINE 02 COL 01 USING WS-PAG
                BACKGROUND-COLOR IS 01 FOREGROUND-COLOR IS 07.
+
        01 LB-OPERACAO.
            03  LINE 24 COL 01 VALUE
        '                                                              '-
@@ -217,7 +218,7 @@
            03 LB-OPCAO LINE 10 COL 11 USING WS-OPCAO
            FOREGROUND-COLOR IS 03.
            03 FILLER VALUE '|' FOREGROUND-COLOR IS 02.
-           03  LINE 11 COL 03 VALUE 'DIGITE UMA DAS OPCOES NUMERICAS!'
+           03 LINE 11 COL 03 VALUE 'DIGITE UMA DAS OPCOES NUMERICAS!'
            FOREGROUND-COLOR IS 03.
 
       *----LABELS DA PAGINA DE RECEITAS--------------------------------*
@@ -239,9 +240,9 @@
            03  FILLER VALUE '|' FOREGROUND-COLOR IS 02.
            03  LINE 13 COL 03 VALUE '**COD.: '
            FOREGROUND-COLOR IS 03.
-           03 LB-OPCAO-RECEITA LINE 13 COL 11 USING WS-OPCAO
+           03  LB-OPCAO-RECEITA LINE 13 COL 11 USING WS-OPCAO
            FOREGROUND-COLOR IS 03.
-           03 FILLER VALUE '|' FOREGROUND-COLOR IS 02.
+           03  FILLER VALUE '|' FOREGROUND-COLOR IS 02.
            03  LINE 14 COL 03 VALUE 'DIGITE UMA DAS OPCOES NUMERICAS!'
            FOREGROUND-COLOR IS 03.
 
@@ -252,13 +253,13 @@
            USING TB-REC-VALOR     FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '|'   FOREGROUND-COLOR IS 02.
            03  LINE 07 COL 03    VALUE 'DATA DE RECEBIMENTO:'.
-           03    LB-DIA-RECEB    LINE 07 COL 24
+           03  LB-DIA-RECEB    LINE 07 COL 24
            USING TB-DIA-RECEB    FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '/'  FOREGROUND-COLOR IS 02.
-           03    LB-MES-RECEB    LINE 07 COL 28
+           03  LB-MES-RECEB    LINE 07 COL 28
            USING TB-MES-RECEB    FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '/'  FOREGROUND-COLOR IS 02.
-           03    LB-ANO-RECEB    LINE 07 COL 32
+           03  LB-ANO-RECEB    LINE 07 COL 32
            USING TB-ANO-RECEB    FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '|'   FOREGROUND-COLOR IS 02.
 
@@ -269,7 +270,7 @@
            03  LB-MES-RECEB-ESP   LINE 08 COL 39
            USING TB-MES-RECEB-ESP FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '/'   FOREGROUND-COLOR IS 02.
-           03    LB-ANO-RECEB-ESP LINE 08 COL 43
+           03  LB-ANO-RECEB-ESP LINE 08 COL 43
            USING TB-ANO-RECEB-ESP FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '|'   FOREGROUND-COLOR IS 02.
 
@@ -306,7 +307,7 @@
            03  FILLER VALUE '|' FOREGROUND-COLOR IS 02.
            03  LINE 13 COL 03 VALUE '**COD.: '
            FOREGROUND-COLOR IS 03.
-           03 LB-OPCAO-CONTA LINE 13 COL 11 USING WS-OPCAO
+           03  LB-OPCAO-CONTA LINE 13 COL 11 USING WS-OPCAO
            FOREGROUND-COLOR IS 03.
            03 FILLER VALUE '|' FOREGROUND-COLOR IS 02.
            03  LINE 14 COL 03 VALUE 'DIGITE UMA DAS OPCOES NUMERICAS!'
@@ -318,14 +319,14 @@
            USING WSR-IDCONTABANCO      FOREGROUND-COLOR IS 03.
            03  FILLER VALUE '|'        FOREGROUND-COLOR IS 02.
            03  LINE 07 COL 03          VALUE 'TIPO DA CONTA: '.
-           03 FILLER VALUE  '|'        FOREGROUND-COLOR IS 02.
+           03  FILLER VALUE  '|'       FOREGROUND-COLOR IS 02.
            03  LINE 08 COL 03          VALUE '[01] CARTEIRA'.
-           03 FILLER VALUE  '|'        FOREGROUND-COLOR IS 02.
+           03  FILLER VALUE  '|'       FOREGROUND-COLOR IS 02.
            03  LINE 09 COL 03          VALUE '[02] CONTA CORRENTE'.
-           03 FILLER VALUE  '|'        FOREGROUND-COLOR IS 02.
+           03  FILLER VALUE  '|'       FOREGROUND-COLOR IS 02.
            03  LINE 10 COL 03          VALUE '[03] POUPANCA'.
-           03 FILLER VALUE  '|'        FOREGROUND-COLOR IS 02.
-           03 LB-CONTA-TIPO            LINE 07 COL 28
+           03  FILLER VALUE  '|'       FOREGROUND-COLOR IS 02.
+           03  LB-CONTA-TIPO           LINE 07 COL 28
            USING WS-CONTA-TIPO         FOREGROUND-COLOR IS 03.
            03 LINE 11  COL 01 VALUE '                                 '.
            03 LINE 12  COL 03 VALUE 'SALDO DA CONTA:'.
@@ -343,7 +344,7 @@
       *-----------------------ABERTURA DE ARQUIVOS---------------------*
            OPEN EXTEND ARQ-RECEITAS
 
-           IF  WS-FSTATUS = 35
+           IF WS-FSTATUS = 35
                OPEN OUTPUT ARQ-RECEITAS
 
            IF WS-FSTATUS EQUAL 00
@@ -390,38 +391,38 @@
 
        1000-ZERA-VARIAVEL.
            INITIALIZE WS-CONTADORES
-           MOVE 99 TO WS-ANO-004
-           MOVE 01 TO WS-CONT-01
-           MOVE ZERO TO WS-OPCAO
-           MOVE 06 TO WS-CONT-02
-           MOVE 1 TO WS-CONT-03
-           MOVE ZEROS TO WS-CONT-04
-      *     MOVE SPACES TO ARQ-REC-BANCO
-           MOVE SPACE TO WS-TESTE
-           MOVE ZEROS TO WS-DIA-QTD
-           MOVE SPACES TO WS-VAL-OK
-           MOVE SPACES TO WS-MREGI
-           MOVE ZEROS TO ARQR-VAL
-           MOVE ZEROS TO WS-CONTA-TIPO
-           MOVE ZEROS TO ARQR-ANO-RECB
-           MOVE ZEROS TO ARQR-MES-RECB
-           MOVE ZEROS TO ARQR-DIA-RECB
-           MOVE ZEROS TO ARQR-ANO-ESP
-           MOVE ZEROS TO ARQR-MES-ESP
-           MOVE ZEROS TO ARQR-DIA-ESP
-           MOVE SPACES TO ARQR-DESC
-           MOVE SPACES TO ARQR-CONTA
-           MOVE ZEROS TO ARQR-TIPO
-           MOVE ZEROS TO TB-REC-TIPO
-           MOVE ZEROS TO TB-DIA-RECEB
-           MOVE ZEROS TO TB-MES-RECEB
-           MOVE ZEROS TO TB-ANO-RECEB
-           MOVE ZEROS TO TB-REC-VALOR
-           MOVE SPACES TO TB-REC-DESC
-           MOVE SPACES TO TB-REC-CONTA
-           MOVE ZEROS TO TB-DIA-RECEB-ESP
-           MOVE ZEROS TO TB-MES-RECEB-ESP
-           MOVE ZEROS TO TB-ANO-RECEB-ESP.
+           MOVE 99       TO WS-ANO-004
+           MOVE 01       TO WS-CONT-01
+           MOVE ZERO     TO WS-OPCAO
+           MOVE 06       TO WS-CONT-02
+           MOVE 1        TO WS-CONT-03
+           MOVE ZEROS    TO WS-CONT-04
+      *     MOVE SPACES  TO ARQ-REC-BANCO
+           MOVE SPACE    TO WS-TESTE
+           MOVE ZEROS    TO WS-DIA-QTD
+           MOVE SPACES   TO WS-VAL-OK
+           MOVE SPACES   TO WS-MREGI
+           MOVE ZEROS    TO ARQR-VAL
+           MOVE ZEROS    TO WS-CONTA-TIPO
+           MOVE ZEROS    TO ARQR-ANO-RECB
+           MOVE ZEROS    TO ARQR-MES-RECB
+           MOVE ZEROS    TO ARQR-DIA-RECB
+           MOVE ZEROS    TO ARQR-ANO-ESP
+           MOVE ZEROS    TO ARQR-MES-ESP
+           MOVE ZEROS    TO ARQR-DIA-ESP
+           MOVE SPACES   TO ARQR-DESC
+           MOVE SPACES   TO ARQR-CONTA
+           MOVE ZEROS    TO ARQR-TIPO
+           MOVE ZEROS    TO TB-REC-TIPO
+           MOVE ZEROS    TO TB-DIA-RECEB
+           MOVE ZEROS    TO TB-MES-RECEB
+           MOVE ZEROS    TO TB-ANO-RECEB
+           MOVE ZEROS    TO TB-REC-VALOR
+           MOVE SPACES   TO TB-REC-DESC
+           MOVE SPACES   TO TB-REC-CONTA
+           MOVE ZEROS    TO TB-DIA-RECEB-ESP
+           MOVE ZEROS    TO TB-MES-RECEB-ESP
+           MOVE ZEROS    TO TB-ANO-RECEB-ESP.
 
 
 
@@ -436,27 +437,28 @@
            DISPLAY LB-FILE-ST
            DISPLAY LB-OPERACAO
            PERFORM UNTIL WS-OPCAO = 99
-           MOVE ZERO TO WS-OPCAO
-           ACCEPT LB-OPCAO
-           EVALUATE WS-OPCAO
-           WHEN 01
-               MOVE SPACES TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-               PERFORM 1000-MENU-RECEITAS
-           WHEN 02
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 03
-               MOVE SPACES TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-               PERFORM 3001-MENU-CONTAS
-           WHEN 99
-               MOVE SPACES TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-               PERFORM 9999-ENCERRAPROGRAM
-           WHEN OTHER
-               MOVE 'OPCAO INVALIDA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
+              MOVE ZERO TO WS-OPCAO
+              ACCEPT LB-OPCAO
+              EVALUATE WS-OPCAO
+              WHEN 01
+                  MOVE SPACES TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+                  PERFORM 1000-MENU-RECEITAS
+              WHEN 02
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 03
+                  MOVE SPACES TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+                  PERFORM 3001-MENU-CONTAS
+              WHEN 99
+                  MOVE SPACES TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+                  PERFORM 9999-ENCERRAPROGRAM
+              WHEN OTHER
+                  MOVE 'OPCAO INVALIDA!' TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
            END-PERFORM.
 
       *------------------- AREA VOLTADA PARA RECEITAS------------------*
@@ -470,31 +472,37 @@
            DISPLAY LB-RECEITAS
            MOVE ZEROS TO LB-OPCAO-RECEITA
            PERFORM UNTIL WS-OPCAO = 99
-           MOVE ZEROS TO WS-OPCAO
-           ACCEPT LB-OPCAO-RECEITA
-           EVALUATE WS-OPCAO
-           WHEN 01
-               PERFORM 1001-CADASTRO-RECEITAS
-           WHEN 02
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 03
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 04
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 05
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 06
-               MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
-           WHEN 99
-               PERFORM 0000-INICIALIZACAO
-           WHEN OTHER
-               MOVE 'OPCAO INVALIDA!' TO WS-STATUSOP
-               DISPLAY LB-OPERACAO
+              MOVE ZEROS TO WS-OPCAO
+              ACCEPT LB-OPCAO-RECEITA
+              EVALUATE WS-OPCAO
+              WHEN 01
+                  PERFORM 1001-CADASTRO-RECEITAS
+              WHEN 02
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 03
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 04
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 05
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 06
+                  MOVE 'OPCAO DO SISTEMA NAO FINALIZADA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
+              WHEN 99
+                  PERFORM 0000-INICIALIZACAO
+              WHEN OTHER
+                  MOVE 'OPCAO INVALIDA!' 
+                  TO WS-STATUSOP
+                  DISPLAY LB-OPERACAO
            END-PERFORM.
 
       *----CADASTRAMENTO DE RECEITAS-----------------------------------*
@@ -541,24 +549,24 @@
                        GIVING WS-ANO-X
                        REMAINDER WS-ANO-004
 
-                           EVALUATE TRUE
-                           WHEN WS-ANO-100 NOT EQUAL 0
-                           AND WS-ANO-004 = 0
-                           AND TB-ANO-RECEB >= 2000
-                               MOVE SPACES TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'OK' TO WS-ANOBISS
-                               MOVE 'OK' TO WS-ANO-OK
-                           WHEN TB-ANO-RECEB < 2000
-                               MOVE 'ANO DEVE SER SEPERIOR A 2000'
-                               TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'NO' TO WS-ANO-OK
-                           WHEN OTHER
-                               MOVE SPACES TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'OK' TO WS-ANO-OK
-                               MOVE 'NO' TO WS-ANOBISS
+                       EVALUATE TRUE
+                       WHEN WS-ANO-100 NOT EQUAL 0
+                       AND WS-ANO-004 = 0
+                       AND TB-ANO-RECEB >= 2000
+                           MOVE SPACES TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'OK' TO WS-ANOBISS
+                           MOVE 'OK' TO WS-ANO-OK
+                       WHEN TB-ANO-RECEB < 2000
+                           MOVE 'ANO DEVE SER SEPERIOR A 2000'
+                           TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'NO' TO WS-ANO-OK
+                       WHEN OTHER
+                           MOVE SPACES TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'OK' TO WS-ANO-OK
+                           MOVE 'NO' TO WS-ANOBISS
                        END-EVALUATE
                    END-PERFORM
                    PERFORM UNTIL WS-MES-OK = 'OK'
@@ -658,24 +666,24 @@
                        GIVING WS-ANO-X
                        REMAINDER WS-ANO-004
 
-                           EVALUATE TRUE
-                           WHEN WS-ANO-100 NOT EQUAL 0
-                           AND  WS-ANO-004 = 0
-                           AND  TB-ANO-RECEB-ESP >= 2000
-                               MOVE SPACES TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'OK' TO WS-ANOBISS
-                               MOVE 'OK' TO WS-ANO-OK
-                           WHEN TB-ANO-RECEB-ESP < 2000
-                               MOVE 'ANO DEVE SER SEPERIOR A 2000'
-                               TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'NO' TO WS-ANO-OK
-                           WHEN OTHER
-                               MOVE SPACES TO WS-STATUSOP
-                               DISPLAY LB-OPERACAO
-                               MOVE 'OK' TO WS-ANO-OK
-                               MOVE 'NO' TO WS-ANOBISS
+                       EVALUATE TRUE
+                       WHEN WS-ANO-100 NOT EQUAL 0
+                       AND  WS-ANO-004 = 0
+                       AND  TB-ANO-RECEB-ESP >= 2000
+                           MOVE SPACES TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'OK' TO WS-ANOBISS
+                           MOVE 'OK' TO WS-ANO-OK
+                       WHEN TB-ANO-RECEB-ESP < 2000
+                           MOVE 'ANO DEVE SER SEPERIOR A 2000'
+                           TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'NO' TO WS-ANO-OK
+                       WHEN OTHER
+                           MOVE SPACES TO WS-STATUSOP
+                           DISPLAY LB-OPERACAO
+                           MOVE 'OK' TO WS-ANO-OK
+                           MOVE 'NO' TO WS-ANOBISS
                        END-EVALUATE
                    END-PERFORM
                    PERFORM UNTIL WS-MES-OK = 'OK'
