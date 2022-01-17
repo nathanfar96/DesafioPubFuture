@@ -1,7 +1,7 @@
       ******************************************************************
       * Author: NATHAN DE FARIA
       * Date: 05/01/2022
-      * Purpose: GERENCIADOR DE FINANCEIRO PESSOAL
+      * Purpose: GERENCIADOR FINANCEIRO PESSOAL
       ******************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. GerFinanceiroP_001.
@@ -82,7 +82,7 @@
 
 
 
-      *----------------DECLARA«√O DE VARIAVEIS E TABLES----------------*
+      *----------------DECLARA√á√ÉO DE VARIAVEIS E TABLES----------------*
        01 WS-CONTADORES.
            03 WS-CONT-01   PIC 9(02) VALUE 1.
            03 WS-CONT-02   PIC 9(02) VALUE 0.
