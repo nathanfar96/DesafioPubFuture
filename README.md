@@ -10,3 +10,4 @@ Desafio feito em Cobol.
 ##### Após copiar o caminho deve-se seguir as seguintes instruções:
 - Painel de Controle\Sistema e Segurança\Sistema
 - Configurações avançadas do sistema
+## <img src= "https://user-images.githubusercontent.com/42828915/149688736-87476ac7-bf44-4499-899b-dc02115e9a47.png" width="375px">
